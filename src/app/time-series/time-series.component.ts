@@ -11,7 +11,6 @@ export class TimeSeriesComponent implements OnChanges {
   @Input('data') public data: any;
 
   ngOnChanges() {
-    console.log("timeseries data", this.data)
     this.options = {
       title: { text: 'Last 100 Commits' },
       xAxis: {

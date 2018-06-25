@@ -14,7 +14,6 @@ export class SearchPageComponent implements OnInit {
   searchQuery: string = '';
   currentOwner: string = '';
   currentRepo: string = '';
-  // currentStat: string = '';
 
   @Output() messageEvent = new EventEmitter<string>();
 
@@ -31,7 +30,6 @@ export class SearchPageComponent implements OnInit {
     this.gitHub.getData()
       .then((res) => {
         this.data = res.json();
-        console.log(this.data)
       })
   }
 
@@ -39,15 +37,12 @@ export class SearchPageComponent implements OnInit {
     this.gitHub.getRepositories(this.searchQuery)
     .then((res) => {
       this.repositories = res.json();
-      console.log(this.repositories)
     })
   }
 
   sendMessage(owner, repo) {
     const message = `${owner.login}/${repo}`
-    // /repo/${stat}`
     this.messageEvent.emit(message)
-    console.log(message);
   }
 
   
