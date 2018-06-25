@@ -1,0 +1,65 @@
+<div>
+  <h1 class="title-font analytics">
+    <b>Analytics: {{repositoryDetails?.name}} Repository</b>
+  </h1>
+  <a (click)="addBookmark(repositoryDetails?.full_name)" class="button is-success is-outlined">Add to Bookmarks</a>
+
+  <table class="table is-narrow">
+    <thead>
+      <tr>
+        <th>Repository Name:</th>
+        <th>Repository Owner:</th>
+        <th># Forks:</th>
+        <th># Stargazers:</th>
+        <th># Watchers:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>{{repositoryDetails?.name}}</td>
+        <td>{{repositoryDetails?.owner.login}}</td>
+        <td>{{repositoryDetails?.forks_count}}</td>
+        <td>{{repositoryDetails?.stargazers_count}}</td>
+        <td>{{repositoryDetails?.watchers_count}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="graph-size">
+
+    <div *ngIf="commits.length > 0">
+      <p>
+        <strong>Top Users:</strong>
+      </p>
+      <app-pie-chart [data]="commits" [labels]="contributors"></app-pie-chart>
+    </div>
+  </div>
+
+  <div class="clear time-size">
+     <strong>Timeline:</strong>
+    <app-time-series class="time-size" [data]="timeSeriesData"></app-time-series>
+  </div>
+
+  <table class="table is-narrow">
+      <thead>
+        <tr>
+          <th>All Users:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  
+          <td>
+            <div *ngIf="repositoryContributors.length > 0">
+              <div *ngFor="let contributor of repositoryContributors">
+                {{contributor?.author.login}}
+              </div>
+            </div>
+          </td>
+  
+        </tr>
+      </tbody>
+    </table>
+   
+</div>

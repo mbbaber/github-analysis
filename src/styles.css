@@ -1,1 +1,146 @@
-/* You can add global styles to this file, and also import other style files */
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+
+body {
+  line-height: 1;
+  font-family: sans-serif;
+  background-color: white;
+  background-size: 100vw, 100vh;
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+header,
+footer {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  z-index:1; 
+}
+
+header {
+  justify-content: flex-end;
+  top: 0;
+  background-color: black;
+}
+
+header h2 a:hover {
+  color: orange;
+}
+
+header h2 {
+  margin-right: 15px;
+  color: white;
+}
+
+footer {
+  justify-content: center;
+  background-color: black;
+  bottom: 0;
+}
+
+footer,
+nav strong {
+  color: white;
+}
+
+
+a {
+  color: #209cee;
+}
+
+a:hover {
+  color: orange;
+}
+
+footer p a:hover {
+  color: orange;
+}
+.container {
+  margin-top: 20vh;
+  width: 90%;
+  margin: 12vh auto auto auto;
+}
+
+.center, th {
+  text-align: center;
+}
+
+.input {
+  width: 60%;
+  margin-bottom: 1.5vh;
+}
+
+.title-font {
+  color: purple;
+  }
+
+h1 {
+  font-size: 3vh;
+  margin-bottom: 1.5vh;
+}
+
+h3 {
+  color: black;
+  margin-bottom: 1.5vh;
+}
+
+.search-column {
+  margin-top:5vh;
+}
+
+.small-button {
+  height: 3vh;
+  font-size: 2vh;
+}
+
+.card {
+  width: 60%;
+  padding: 1em;
+  margin-bottom: 1.5vh;
+  word-wrap: break-word;
+  border-radius: 5px;
+}
+
+.graph-size, {
+  width: 325px;
+  height: auto;
+  margin-top: 5vh;
+}
+
+.float-left {
+  float:left;
+}
+
+.float-right {
+  float:right;
+}
+
+.clear {
+  clear: both;
+}
+
+.analytics {
+  margin-bottom: 3vh;
+}
+
+.table {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-right: 3vw;
+
+}

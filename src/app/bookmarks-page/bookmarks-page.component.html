@@ -1,0 +1,14 @@
+
+<div>
+    <h1 class="title-font"><b>Bookmarks</b></h1>
+
+  <div class="card" *ngFor ="let oneBookmark of bookmarkList">
+      <h3><strong>{{oneBookmark.full_name}}</strong></h3>
+
+      <div class="center"> 
+          <a href = "{{oneBookmark.html_url}}">Github</a>
+          <a (click)="sendMessage(oneBookmark.full_name)" class="button is-success small-button is-outlined">Analytics</a>
+        </div>
+    </div>
+  </div>
+

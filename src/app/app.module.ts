@@ -1,18 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
+import { Routes, RouterModule } from '@angular/router';
+import { Http, Response } from '@angular/http';
+import { ChartModule } from 'angular2-highcharts';
 
 import { AppComponent } from './app.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { AnalyticsPageComponent } from './analytics-page/analytics-page.component';
+import { BookmarksPageComponent } from './bookmarks-page/bookmarks-page.component';
+import { InputFilterPipe } from './pipes/input-filter.pipe';
+import { GithubService } from './github.service';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { TimeSeriesComponent } from './time-series/time-series.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputFilterPipe,
+    SearchPageComponent,
+    AnalyticsPageComponent,
+    BookmarksPageComponent,
+    PieChartComponent,
+    TimeSeriesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule, 
+    HttpClientModule,
+    HttpModule,
+    FormsModule,
+    ChartsModule,
+    ChartModule.forRoot(require('highcharts/highstock'))
   ],
-  providers: [],
+  providers: [
+    GithubService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

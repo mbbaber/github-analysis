@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('github-fullstack App', () => {
+describe('angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {
