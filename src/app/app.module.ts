@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
@@ -15,8 +14,8 @@ import { AnalyticsPageComponent } from './analytics-page/analytics-page.componen
 import { BookmarksPageComponent } from './bookmarks-page/bookmarks-page.component';
 import { InputFilterPipe } from './pipes/input-filter.pipe';
 import { GithubService } from './github.service';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { TimeSeriesComponent } from './time-series/time-series.component';
+import { HighpieComponent } from './highpie/highpie.component';
 
 declare var require : any;
 
@@ -27,8 +26,8 @@ declare var require : any;
     SearchPageComponent,
     AnalyticsPageComponent,
     BookmarksPageComponent,
-    PieChartComponent,
-    TimeSeriesComponent
+    TimeSeriesComponent,
+    HighpieComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +35,6 @@ declare var require : any;
     HttpClientModule,
     HttpModule,
     FormsModule,
-    ChartsModule,
     ChartModule.forRoot(require('highcharts/highstock'))
   ],
   providers: [

@@ -17,8 +17,7 @@ export class AnalyticsPageComponent implements OnChanges {
   repositoryDetails: any;
   repositoryContributors: any = [];
   repositoryCommits: any;
-  contributors = [];
-  commits = [];
+  commits: any = {};
   timeSeriesData = [];
 
 
@@ -102,13 +101,18 @@ export class AnalyticsPageComponent implements OnChanges {
   groupByCommiter(lastCommits){
     console.log(lastCommits)
 
+    //Reset graph
+    this.commits = {};
+
     var contributors = [];
     var commits = [];
 
     var groups = {}
 
+    // console.log(lastCommits)
+
     lastCommits
-      .map(c => c.author.login)
+      .map(c => c.commit.author.name)
       .forEach(user => {
         if (groups[user]){
           groups[user] = groups[user] + 1;
@@ -153,10 +157,8 @@ export class AnalyticsPageComponent implements OnChanges {
       commits.push(sum)
     }
 
-    this.contributors = contributors;
-    this.commits = commits;
+    this.commits = {commits: commits, contributors: contributors};
 
-    console.log(this.contributors);
     console.log(this.commits)
   }
 

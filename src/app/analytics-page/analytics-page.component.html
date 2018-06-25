@@ -28,11 +28,12 @@
 
   <div class="graph-size">
 
-    <div *ngIf="commits.length > 0">
+    <div *ngIf="commits.commits?.length > 0">
       <p>
         <strong>Top Users:</strong>
       </p>
-      <app-pie-chart [data]="commits" [labels]="contributors"></app-pie-chart>
+      <!-- <app-pie-chart [data]="commits"></app-pie-chart> -->
+      <app-highpie [data]="commits"></app-highpie>
     </div>
   </div>
 
