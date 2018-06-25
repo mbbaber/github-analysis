@@ -18,6 +18,7 @@ import { GithubService } from './github.service';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { TimeSeriesComponent } from './time-series/time-series.component';
 
+declare var require : any;
 
 @NgModule({
   declarations: [
